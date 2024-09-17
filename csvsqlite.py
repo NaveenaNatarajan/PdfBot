@@ -24,7 +24,7 @@ def store_csv_in_db(csv_files):
     cursor.execute("DROP TABLE IF EXISTS csv_data")
     cursor.execute("""
     CREATE TABLE csv_data (
-        index INTEGER PRIMARY KEY AUTOINCREMENT,
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         content TEXT
     )
     """)
