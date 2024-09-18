@@ -9,6 +9,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 import google.generativeai as genai
 import streamlit as st
+from pydantic_settings import BaseSettings
 
 # API key loading
 load_dotenv()
