@@ -1,6 +1,9 @@
 streamlit
 google-generativeai
 python-dotenv
+pdfminer.six
+pymupdf
+pdfplumber
 langchain
 PyPDF2
 faiss-cpu
