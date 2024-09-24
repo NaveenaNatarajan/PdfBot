@@ -11,7 +11,7 @@ import streamlit as st
 
 # API key loading
 load_dotenv()
-api_key = os.getenv("MYAPI_KEY")
+api_key = os.getenv("MY_API_KEY")
 genai.configure(api_key=api_key)
 
 
