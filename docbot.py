@@ -50,12 +50,8 @@ def get_conversational_chain():
 #getting input from the user and connecting it with gemini using conversational chain
 def user_input(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
-    try:
-        # Load FAISS index with allow_dangerous_deserialization set to True
-        new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
-    except ValueError as e:
-        st.error(f"Error loading FAISS index: {e}")
-        return
+    new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
+
     docs = new_db.similarity_search(user_question)
     chain = get_conversational_chain()
     response = chain({"input_documents":docs, "question": user_question}, return_only_outputs=True)
