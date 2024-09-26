@@ -94,11 +94,6 @@ def get_text_chunks(text, method, chunk_size, chunk_overlap):
         return ["Invalid text splitting method selected!"]
 
 
-# Text chunking
-def get_text_chunks(text):
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=1000)
-    return text_splitter.split_text(text)
-
 # Vector store creation using FAISS
 def get_vector_store(text_chunks):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
